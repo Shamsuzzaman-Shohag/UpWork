@@ -1,0 +1,135 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"); */
+
+/* html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+} */
+
+:root {
+  --color-green: #5fbb47;
+  --color-blue: #1a758f;
+  --agency-theme-color-primary: var(--color-green);
+  --agency-theme-color-secondary: var(--color-blue);
+  --agency-theme-color-secondary-alt: #5a9eb1;
+  --agency-theme-color-secondary-light: #e7f1f4;
+  --agency-theme-color-link: var(--agency-theme-color-primary);
+  --color-progress-bar-background: var(--color-green);
+  --color-progress-bar-progress: var(--color-blue);
+  --color-warning: #ff9700;
+  --color-danger: #d32f2f;
+  --color-danger-light: #e86b6b;
+  --color-danger-deep-light: #f55953;
+  --color-orange: #e99009;
+  --color-btn-gray: #bdbdbd;
+  --color-btn-gray-light: #dddddd;
+  --color-grey: #949ea7;
+  --color-light-grey: #404f5d;
+  --color-card-gray: #29333c;
+  --color-text-black: #495057;
+  --default-font-family: "Montserrat", sans-serif;
+  --window-height: 100px;
+}
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* h1{
+  font-size: 20px;
+  font-weight: 800;
+  color: #555;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  color: #555;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  padding: 20px 0 20px 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+h2 {
+  font-size: 20px;
+  padding: 10px 0 10px 0;
+}
+
+h3 {
+  font-size: 16px;
+  padding: 10px 0 10px 0;
+}
+
+h4,
+h5 {
+  padding: 10px 0 10px 0;
+  margin: 0;
+}
+
+h4 {
+  font-size: 20px;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
