@@ -27,13 +27,13 @@ const Header = () => {
   return (
     <Box display="flex" justifyContent="end" p={2} borderBottom="1px solid grey">
       <Box display="flex">
-        {/* <IconButton onClick={colorMode.toggleColorMode} size="large">
-            {theme.palette.mode === "dark" ? (
-              <DarkModeOutlinedIcon size="large" />
-            ) : (
-              <LightModeOutlinedIcon size="large" />
-            )}
-          </IconButton> */}
+        <IconButton onClick={colorMode.toggleColorMode} size="large">
+          {theme.palette.mode === "dark" ? (
+            <DarkModeOutlinedIcon size="large" />
+          ) : (
+            <LightModeOutlinedIcon size="large" />
+          )}
+        </IconButton>
         <IconButton size="large">
           <Logout size="large" onClick={handleLogout} />
         </IconButton>

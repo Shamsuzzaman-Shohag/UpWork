@@ -8,6 +8,7 @@ import Team from "./components/pages/team";
 import Form from "./components/pages/form";
 import Login from "./components/pages/Login";
 import CreateDomain from "./components/pages/CreateDomain";
+import ListDomain from "./components/pages/ListDomain";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import PrivateRoute from 'components/layout/PrivateRoute'
@@ -50,7 +51,7 @@ function App() {
           }  */}
 
           <Route index={true} path="/create-domain" element={<PrivateRoute component={CreateDomain} />} />
-          <Route index={true} path="/team" element={<PrivateRoute component={Team} />} />
+          <Route index={true} path="/team" element={<PrivateRoute component={ListDomain} />} />
 
           {/* <Route exact path="/team" component={Team} /> */}
           <Route index={true} path="/login" element={<Login />} />

@@ -133,3 +133,520 @@ h6 {
   font-size: 18px;
   margin-bottom: 10px;
 }
+
+.MuiButton-text {
+  padding: 0;
+}
+
+.MuiFormControl-root>div:after {
+  border-bottom-color: var(--color-success-override) !important;
+}
+
+.MuiFormControl-root>div.Mui-error:after {
+  border-bottom-color: var(--color-danger-override) !important;
+}
+
+.MuiInputBase-root {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.MuiFormControl-root .MuiFormLabel-root.MuiFormLabel-filled+.MuiInputBase-root .MuiSelect-multiple {
+  padding: 10px 15px;
+}
+
+.MuiAutocomplete-root .MuiInputBase-root {
+  padding: 6.5px 9px;
+}
+
+.MuiInput-underline.Mui-disabled:before {
+  border-bottom-style: solid;
+}
+
+.no-underline .MuiInput-underline.Mui-focused:after,
+.no-underline .MuiInput-underline:after,
+.no-underline .MuiInput-underline:before,
+.no-underline .MuiInput-underline.Mui-focused:before {
+  border-bottom: none !important;
+}
+
+.fullwidth-select .MuiInputBase-root {
+  width: 100%;
+}
+
+.MuiTypography-root {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  /* line-height: 1.5; */
+}
+
+.MuiFormLabel-root {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  /* line-height: 20px; */
+}
+
+.MuiFormLabel-root {
+  color: #9e9e9e;
+}
+
+.login-input-label.MuiFormLabel-root:not(.Mui-error) {
+  color: var(--agency-theme-color-secondary);
+}
+
+.login-input-label.MuiFormLabel-root.Mui-focused {
+  color: var(--agency-theme-color-primary);
+
+}
+
+.radio-control .MuiFormLabel-root,
+.radio-control .MuiFormLabel-root.Mui-focused {
+  color: var(--color-text-black);
+}
+
+/* .MuiInputBase-input {
+    height: 1.57em;
+} */
+
+.MuiSelect-select:focus {
+  background: transparent;
+}
+
+.MuiMenuItem-root {
+  font-family: var(--default-font-family);
+  font-size: 16px;
+}
+
+div[class*="MUIDataTableFilter-gridListTile"] {
+  font-family: var(--default-font-family);
+  padding-top: 22px !important;
+}
+
+p[class*="MUIDataTableFilter-title"] {
+  margin-left: 0 !important;
+}
+
+button[class*="MUIDataTableFilter-resetLink"] {
+  font-family: var(--default-font-family);
+  margin-top: -3px;
+  font-size: 14px;
+}
+
+.MuiTable-root .date-time-col {
+  width: 90px;
+}
+
+.MuiTable-root .email-max-width {
+  width: 220px;
+}
+
+.MuiTable-root .right-sticky-col {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  position: sticky;
+  white-space: nowrap;
+  right: 0;
+}
+
+.MuiTablePagination-toolbar>* {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.MuiTablePagination-toolbar .MuiTablePagination-selectIcon {
+  top: 4px;
+}
+
+.MuiTablePagination-toolbar .MuiTablePagination-input.MuiSelect-root .MuiTablePagination-select {
+  line-height: 20px;
+}
+
+/* .MuiTableHead-root,
+.MuiTableHead-root th {
+    z-index: 90;
+} */
+.MuiTableHead-root th {
+  /* background: var(--color-light-grey); */
+  background: var(--agency-theme-color-secondary);
+  color: #fff;
+}
+
+.MuiTableHead-root th div,
+.MuiTableHead-root th span,
+.MuiTableHead-root th a {
+  color: #fff;
+  text-align: left;
+  line-height: 22px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.text-right div,
+.MuiTableHead-root th.MuiTableCell-root.text-right span,
+.MuiTableHead-root th.MuiTableCell-root.text-right a {
+  text-align: right;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.text-center div,
+.MuiTableHead-root th.MuiTableCell-root.text-center span,
+.MuiTableHead-root th.MuiTableCell-root.text-center a {
+  text-align: center;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.w-min-content div,
+.MuiTableHead-root th.MuiTableCell-root.w-min-content span,
+.MuiTableHead-root th.MuiTableCell-root.w-min-content a {
+  width: min-content;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.w-max-content div,
+.MuiTableHead-root th.MuiTableCell-root.w-max-content span,
+.MuiTableHead-root th.MuiTableCell-root.w-max-content a {
+  width: max-content;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.width-80,
+.MuiTableBody-root td.MuiTableCell-root.width-80 {
+  width: 80px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.min-width-80,
+.MuiTableBody-root td.MuiTableCell-root.min-width-80 {
+  min-width: 80px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.min-width-100px,
+.MuiTableBody-root td.MuiTableCell-root.width-100px {
+  min-width: 100px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.min-width-130,
+.MuiTableBody-root td.MuiTableCell-root.min-width-130 {
+  min-width: 130px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.min-width-150,
+.MuiTableBody-root td.MuiTableCell-root.min-width-150 {
+  min-width: 150px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.min-width-170,
+.MuiTableBody-root td.MuiTableCell-root.min-width-170 {
+  min-width: 170px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.min-width-190,
+.MuiTableBody-root td.MuiTableCell-root.width-190 {
+  min-width: 190px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.width-130,
+.MuiTableBody-root td.MuiTableCell-root.width-130 {
+  width: 130px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.width-150,
+.MuiTableBody-root td.MuiTableCell-root.width-150 {
+  width: 150px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.width-170,
+.MuiTableBody-root td.MuiTableCell-root.width-170 {
+  width: 170px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.width-190,
+.MuiTableBody-root td.MuiTableCell-root.width-190 {
+  width: 190px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.width-350 {
+  width: 350px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.min-width-300 {
+  min-width: 300px;
+}
+
+/* .MuiTableHead-root th.MuiTableCell-root.max-width-320 {
+  max-width: 320px;
+} */
+
+.MuiTableHead-root th.MuiTableCell-root.max-width-300,
+.MuiTableBody-root td.MuiTableCell-root.max-width-300,
+.MuiTableBody-root td.MuiTableCell-root.max-width-300 div,
+.MuiTableBody-root td.MuiTableCell-root.max-width-300 span,
+.MuiTableBody-root td.MuiTableCell-root.max-width-300 a {
+  max-width: 300px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.width-480,
+.MuiTableBody-root td.MuiTableCell-root.width-480,
+.MuiTableBody-root td.MuiTableCell-root.width-480 div,
+.MuiTableBody-root td.MuiTableCell-root.width-480 span,
+.MuiTableBody-root td.MuiTableCell-root.width-480 a {
+  width: 480px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.mw-80,
+.MuiTableHead-root th.MuiTableCell-root.mw-80 div,
+.MuiTableHead-root th.MuiTableCell-root.mw-80 span,
+.MuiTableHead-root th.MuiTableCell-root.mw-80 a {
+  max-width: 80px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.mw-140 div,
+.MuiTableHead-root th.MuiTableCell-root.mw-140 span,
+.MuiTableHead-root th.MuiTableCell-root.mw-140 a {
+  max-width: 140px;
+}
+
+.MuiTableHead-root th.MuiTableCell-root.mw-190 div,
+.MuiTableHead-root th.MuiTableCell-root.mw-190 span,
+.MuiTableHead-root th.MuiTableCell-root.mw-190 a {
+  max-width: 190px;
+}
+
+.MuiPaper-root.MuiPaper-rounded>.MuiPaper-root.MuiPaper-rounded,
+div[class*="MUIDataTableToolbarSelect-root"] {
+  display: block;
+  /* margin-top: 20px; */
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #ebebeb;
+}
+
+.MuiPaper-root.MuiPaper-rounded>.MuiPaper-root.MuiPaper-rounded>div>h6,
+h6[class*="MUIDataTableToolbarSelect-title"] {
+  padding-left: 0;
+  text-align: center;
+}
+
+.MuiTableCell-root.MuiTableCell-head.text-right>span,
+span[class*="MUIDataTableHeadCell-contentWrapper"] {
+  display: block;
+}
+
+.MuiTableCell-root.MuiTableCell-head .MuiButtonBase-root.MuiButton-root,
+button[class*="MUIDataTableHeadCell-toolButton"] {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+.MuiTableCell-root.MuiTableCell-head .MuiButtonBase-root.MuiButton-root {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.MuiTableCell-root .MuiButtonBase-root.MuiCheckbox-root {
+  padding: 0;
+}
+
+/* td.MuiTableCell-root .MuiButtonBase-root.MuiCheckbox-root .MuiSvgIcon-root {
+  color: rgb(158, 158, 158);
+}
+td.MuiTableCell-root .MuiButtonBase-root.MuiCheckbox-root.Mui-checked .MuiSvgIcon-root {
+  color: var(--agency-theme-color-primary);
+}
+th.MuiTableCell-root .MuiButtonBase-root.MuiCheckbox-root .MuiSvgIcon-root {
+  color: #fff;
+} */
+.custom-footer .MuiTableCell-footer {
+  background: var(--color-light-grey);
+  color: #fff;
+}
+
+.MuiTableSortLabel-icon {
+  fill: #fff;
+}
+
+.MuiTableSortLabel-root {
+  height: 20px;
+}
+
+div[class*="MUIDataTableSearch-searchText"] {
+  flex: 1 0;
+}
+
+/* div[class*="MUIDataTableFilter-root"], */
+.MuiTableCell-root {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  height: auto;
+}
+
+.MuiTableCell-root {
+  padding: 11px 10px;
+  /* vertical-align: top; */
+  vertical-align: middle;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+th.MuiTableCell-root {
+  border-bottom: 0;
+}
+
+.MuiTableBody-root tr:nth-child(odd) {
+  /* background: #ffffff; */
+}
+
+.MuiTableBody-root tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+.MuiTableBody-root .MuiTableRow-hover:hover,
+.MuiTableBody-root tr:hover {
+  background-color: #e6e6e6;
+}
+
+.MuiTableCell-root div,
+.MuiTableCell-root span,
+.MuiTableCell-root p,
+.MuiTableCell-root a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  /* width: max-content; */
+  /* white-space: nowrap; */
+}
+
+.MuiTableCell-root.mw-190 div,
+.MuiTableCell-root.mw-190 span,
+.MuiTableCell-root.mw-190 p,
+.MuiTableCell-root.mw-190 a {
+  max-width: 210px;
+}
+
+.MuiTableCell-root.mw-140 div,
+.MuiTableCell-root.mw-140 span,
+.MuiTableCell-root.mw-140 p,
+.MuiTableCell-root.mw-140 a {
+  max-width: 140px;
+}
+
+.MuiTableCell-root.sub-cell,
+.MuiTableCell-root.sub-cell div,
+.MuiTableCell-root.sub-cell span,
+.MuiTableCell-root.sub-cell p,
+.MuiTableCell-root.sub-cell a {
+  color: rgb(158, 158, 158);
+}
+
+.MuiTableCell-root .MuiIconButton-root:not(.MuiAutocomplete-popupIndicator) {
+  padding: 7px;
+  margin: -7px 0;
+}
+
+.MuiTableRow-root .MuiTableCell-root .Mui-checked {
+  color: var(--agency-theme-color-primary);
+}
+
+.MuiTableRow-root .MuiTableCell-root .Mui-checked.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.MuiTableHead-root .MuiTableCell-root .Mui-checked {
+  color: #fff;
+}
+
+.MuiTableCell-root .MuiCheckbox-indeterminate {
+  color: #fff;
+}
+
+.MuiFormControlLabel-root.MuiFormControlLabel-labelPlacementStart {
+  margin-left: 0px;
+}
+
+.MuiTableCell-root .MuiFormControlLabel-root {
+  min-width: 230px;
+}
+
+.MuiTableCell-root .MuiInputBase-input.MuiOutlinedInput-input {
+  padding: 8px;
+}
+
+.MuiTableCell-root .MuiFormControlLabel-root,
+.MuiTableCell-root .MuiFormControl-fullWidth {
+  margin-left: unset;
+  margin-right: unset;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+/* .MuiTableCell-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
+.MuiTableCell-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #ccc;
+} */
+
+.bordered-cell-table .MuiTableCell-head {
+  border: 1px solid #145364;
+}
+
+.bordered-cell-table .MuiTableCell-body {
+  border: 1px solid #d8d8d8;
+}
+
+.MuiList-root>.MuiMenuItem-root.MuiMenuItem-gutters {
+  /* display: block; */
+  color: var(--agency-theme-color-secondary);
+  white-space: normal;
+}
+
+.MuiList-root>.MuiMenuItem-root.MuiMenuItem-gutters.select-with-opt-group {
+  padding-left: 30px;
+}
+
+.MuiList-root>.MuiMenuItem-root.Mui-selected.MuiMenuItem-gutters {
+  color: #fff;
+  background-color: var(--agency-theme-color-primary);
+}
+
+.select-opt-group {
+  font-family: var(--default-font-family);
+  font-size: 16px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+/* .MuiToolbar-root {
+    padding: 0;
+} */
+/* .MuiDialogTitle-root {
+  padding: 15px;
+} */
+.MuiDialogTitle-root h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 0;
+}
+
+/* .MuiDialogActions-root {
+    padding: 17px;
+    display: block;
+} */
+
+.MuiPaper-root>div {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.MuiPaper-root div[class*="MUIDataTableFilter-root"] {
+  padding: 24px;
+}
+
+/* .MuiPaper-root .MuiChip-root {
+  margin-bottom: 10px;
+} */
+
+.MuiPaper-root div[class*="MUIDataTableFilterList-chip"] {
+  margin-bottom: 10px;
+}
+
+.MuiFormHelperText-root {
+  font-family: "Montserrat", sans-serif;
+  font-size: 85%;
+  margin: 0px;
+  min-height: 0px;
+}
