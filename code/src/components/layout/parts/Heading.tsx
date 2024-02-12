@@ -1,7 +1,11 @@
 import { Typography, Box, useTheme } from "@mui/material";
-import { tokens } from "../../theme";
+import { tokens } from "../../../theme";
 
-const Heading = ({ title }) => {
+type HeadingProps = {
+  title: string;
+}
+
+const Heading = ({ title }: HeadingProps) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (

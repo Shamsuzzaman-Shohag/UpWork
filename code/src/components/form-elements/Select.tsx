@@ -16,7 +16,17 @@ import {
 } from '@mui/material';
 import { KeyboardArrowDown } from '@mui/icons-material';
 import { checkAreEqual } from 'libs/Helpers';
-import { TypeCommonDropdownOption } from 'types/Common.types';
+
+export type TypeCommonDropdownOption = {
+  value: string;
+  text: string;
+  label?: string;
+  rank?: any;
+  isDefault?: boolean;
+  isSelectable?: boolean;
+} & Record<string, any>;
+
+export type TypeCommonDropdownOptions = TypeCommonDropdownOption[];
 
 type SelectProps<T> = {
   name: string;
@@ -41,11 +51,9 @@ export const SelectController = React.memo(<T extends TypeCommonDropdownOption>
   // console.log({ isDirty: methods.formState.dirtyFields[name] });
 
   const required = rest?.required ?? false;
-  const isCustomField = rest?.isCustomField;
 
   delete rest?.onChange;
   delete rest?.required;
-  delete rest?.isCustomField;
 
   const placeholder = rest?.placeholder;
   const placeholderMenuItem = placeholder !== null
@@ -68,11 +76,7 @@ export const SelectController = React.memo(<T extends TypeCommonDropdownOption>
             fullWidth
             required={required}
             // done double check intentionally to maintain validation for both simple field name and nested field name like 'customField.ANYNAMELIKEGUID'
-            error={
-              isCustomField
-                ? !!methods.getFieldState(name).error
-                : !!methods.formState.errors[name]
-            }
+            error={!!methods.formState.errors[name]}
             margin='dense'
           >
             <StyledInputLabel
@@ -120,17 +124,9 @@ export const SelectController = React.memo(<T extends TypeCommonDropdownOption>
             </StyledSelect>
           </FormControl>
           {
-            (
-              isCustomField
-                ? !!methods.getFieldState(name).error
-                : !!methods.formState.errors[name]
-            ) &&
+            !!methods.formState.errors[name] &&
             <FormHelperText error>
-              <>{
-                isCustomField
-                  ? (methods.getFieldState(name).error?.message ?? "")
-                  : (methods.formState.errors[name]?.message ?? "")
-              }</>
+              <>{methods.formState.errors[name]?.message ?? ""}</>
             </FormHelperText>
           }
         </>
@@ -142,12 +138,7 @@ export const SelectController = React.memo(<T extends TypeCommonDropdownOption>
     const name: string = prevProps.name;
 
     return (
-      // (prevProps.methods.getFieldState(name).error?.message ?? '') === (nextProps.methods.getFieldState(name).error?.message ?? '') &&
-      (
-        prevProps.isCustomField
-          ? (prevProps.methods.getFieldState(name).error ?? "") === (nextProps.methods.getFieldState(name).error ?? "")
-          : (prevProps.methods.formState?.errors[name]?.message ?? "") === (nextProps.methods.formState?.errors[name]?.message ?? "")
-      ) &&
+      (prevProps.methods.getFieldState(name).error?.message ?? '') === (nextProps.methods.getFieldState(name).error?.message ?? '') &&
       checkAreEqual(prevProps.options, nextProps.options) &&
       (prevProps?.isCustomField ?? false) === (nextProps?.isCustomField ?? false) &&
       (prevProps?.required ?? false) === (nextProps?.required ?? false) &&

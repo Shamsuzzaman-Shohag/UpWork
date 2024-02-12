@@ -1,11 +1,11 @@
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Box } from "@mui/material";
-import Heading from "components/layout/Heading";
+import Heading from "components/layout/parts/Heading";
 import { useAppForm } from "libs/Hooks";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Form, Input, InputWithIcon, ResetButton, joi } from "components/shared/form/Form";
-import SubmitButton from "components/shared/form/SubmitButton";
+import { Form, Input, InputWithIcon, ResetButton, joi } from "components/form-elements/Form";
+import SubmitButton from "components/form-elements/SubmitButton";
 
 type TypeCreateDomain = {
   domainName: string;

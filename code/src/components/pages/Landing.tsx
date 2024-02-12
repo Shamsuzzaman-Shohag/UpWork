@@ -1,11 +1,11 @@
-import { getToken } from "libs/Helpers";
+import { getAuthToken } from "libs/Helpers";
 import { Navigate } from 'react-router-dom';
 
 const Landing = () => {
   return (
-    getToken()
-      ? <Navigate to="/team" />
-      : <Navigate to="/login" />
+    getAuthToken()
+      ? <Navigate to="/service/list" />
+      : <Navigate to="/sign-in" />
   )
 }
 

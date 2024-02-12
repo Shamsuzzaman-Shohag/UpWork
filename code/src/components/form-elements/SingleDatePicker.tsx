@@ -92,20 +92,6 @@ export const SingleDatePickerController = React.memo(({ name, label, methods, ..
                     helperText={<>{methods.getFieldState(name).error?.message ?? ''}</>}
                   />
                 );
-                // return (
-                //   <StyledTextField
-                //     fullWidth
-                //     required={required}
-                //     margin="dense"
-                //     {...params}
-                //     inputProps={{
-                //       ...params.inputProps ?? {},
-                //       value: field.value != null ? params?.inputProps?.value ?? "" : ""
-                //     }}
-                //     error={!!methods.formState.errors[name]}
-                //     helperText={methods.formState.errors[name] ? methods.formState.errors[name].message : ''}
-                //   />
-                // );
               }}
             />
           </LocalizationProvider>

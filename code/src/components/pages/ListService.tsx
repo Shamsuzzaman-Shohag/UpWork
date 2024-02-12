@@ -37,7 +37,7 @@ type TypeUserListItem = {
   supportTypes: string[];
 };
 
-const DomainList = () => {
+const ServiceList = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -145,7 +145,7 @@ const DomainList = () => {
     <>
       <Loader isLoading={isLoading} />
       <Box m="20px">
-        <Heading title="Domain List" />
+        <Heading title="Service List" />
         <Box
           m="40px 0 0 0"
           height="75vh"
@@ -227,4 +227,4 @@ const DomainList = () => {
   );
 };
 
-export default DomainList;
+export default ServiceList;

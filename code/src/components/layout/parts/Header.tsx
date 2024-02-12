@@ -1,11 +1,20 @@
-import { Box, IconButton, useTheme } from "@mui/material";
 import { useContext } from "react";
-import { ColorModeContext, tokens } from "../../theme";
-import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import { Logout } from "@mui/icons-material";
-import { removeUserSession } from "libs/Helpers";
+import {
+  Box,
+  IconButton,
+  useTheme
+} from "@mui/material";
+import {
+  DarkModeOutlined,
+  LightModeOutlined,
+  Logout
+} from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import {
+  ColorModeContext,
+  tokens
+} from "theme";
+import { removeUserSession } from "libs/Helpers";
 
 const Header = () => {
   const theme = useTheme();
@@ -18,7 +27,7 @@ const Header = () => {
     try {
       removeUserSession();
 
-      navigate("/login");
+      navigate("/sign-in");
     } catch (error) {
       //
     }
@@ -29,13 +38,13 @@ const Header = () => {
       <Box display="flex">
         <IconButton onClick={colorMode.toggleColorMode} size="large">
           {theme.palette.mode === "dark" ? (
-            <DarkModeOutlinedIcon size="large" />
+            <DarkModeOutlined fontSize="large" />
           ) : (
-            <LightModeOutlinedIcon size="large" />
+            <LightModeOutlined fontSize="large" />
           )}
         </IconButton>
-        <IconButton size="large">
-          <Logout size="large" onClick={handleLogout} />
+        <IconButton size="large" onClick={handleLogout}>
+          <Logout fontSize="large" />
         </IconButton>
       </Box>
     </Box>

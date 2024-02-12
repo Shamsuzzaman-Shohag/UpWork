@@ -9,7 +9,6 @@ import {
   InputAdornment,
   styled
 } from '@mui/material';
-import { withStyles } from '@mui/material/styles';
 import { checkAreEqual } from 'libs/Helpers';
 
 type TypeInputProps = {
@@ -18,53 +17,11 @@ type TypeInputProps = {
   className?: string;
   inputProps?: Record<string, any>;
   required?: boolean;
-  isCustomField?: boolean;
 } & Record<string, any>;
 
 type InputControllerProps = TypeInputProps & {
   methods: UseFormReturn;
 };
-
-// const findDeepObjectValue = (dataObject: Record<string, any>, stringIterator: string, context?: any) => {
-//   let updatedDataObject = dataObject;
-//   let finalValue = "";
-//   let isSkip = false;
-//   const iterators = stringIterator.split(".");
-
-//   if (iterators.length <= 1) {
-//     return dataObject[stringIterator];
-//   }
-
-//   // if (context === "error") {
-//   //   console.log({ dataObject, iterators, context });
-//   // }
-
-//   iterators.forEach(x => {
-
-//     // if (context === "error") {
-//     //   console.log({ updatedDataObject, x });
-//     // }
-
-//     if (isSkip) {
-//       return;
-//     }
-
-//     if (!isSkip && updatedDataObject[x] != null) {
-//       updatedDataObject = updatedDataObject[x];
-//     }
-
-//     if (updatedDataObject[x] == null) {
-//       finalValue = updatedDataObject[x];
-//       isSkip = true;
-//     }
-//   });
-
-//   // if (context === "error") {
-//   //   console.log({ updatedDataObject, finalValue });
-//   // }
-
-//   return finalValue;
-// };
 
 export const InputController = React.memo(({ name, label, methods, ...rest }: InputControllerProps) => {
   const [isOnFocus, setIsOnFocus] = useState(false);
@@ -75,31 +32,10 @@ export const InputController = React.memo(({ name, label, methods, ...rest }: In
   const restInputProps = rest?.inputProps ?? {};
   const externalRef = rest?.inputRef as React.RefObject<HTMLInputElement> ?? undefined;
   const isNumberTypeInput = ["number", "money", "percentage"].includes(inputType);
-  const isCustomField = rest?.isCustomField;
 
   delete rest?.onChange;
   delete rest?.inputProps;
   delete rest?.inputRef;
-  delete rest?.isCustomField;
-
-  // const setInputAdornment = (value: any) => {
-  //   if (inputType === "money" && value !== "") {
-  //     rest.type = "number";
-  //     inputProps = {
-  //       // ...restInputProps,
-  //       startAdornment: <InputAdornment position="start"><b>$</b></InputAdornment>
-  //     };
-  //   } else if (inputType === "percentage" && value !== "") {
-  //     rest.type = "number";
-  //     inputProps = {
-  //       // ...restInputProps,
-  //       startAdornment: <InputAdornment position="start"><b>%</b></InputAdornment>
-  //     };
-  //   } else {
-  //     // inputProps = { ...restInputProps };
-  //     // inputProps = {};
-  //   }
-  // };
 
   const setInputAdornment = (value: any) => {
     return (inputType === "money" && (value !== "" || isOnFocus))
@@ -121,14 +57,6 @@ export const InputController = React.memo(({ name, label, methods, ...rest }: In
         e.preventDefault();
       };
 
-      // inputRef.current.onkeyup = (e) => {
-      //   // console.log("onkeyup: ", e);
-      //   if (["ArrowUp", "ArrowDown"].includes(e.key)) {
-      //     // inputRef.current?.blur();
-      //     e.preventDefault();
-      //   }
-      // };
-
       inputRef.current.onkeydown = (e) => {
         // console.log("onkeyup: ", e);
         if (["ArrowUp", "ArrowDown"].includes(e.key)) {
@@ -144,15 +72,6 @@ export const InputController = React.memo(({ name, label, methods, ...rest }: In
       name={name}
       control={methods.control}
       render={({ field }) => {
-
-        // if (inputType === "money") {
-        //   setInputAdornment(field.value);
-        // }
-
-        // if (inputType === "percentage") {
-        //   setInputAdornment(field.value);
-        // }
-
         return (
           <StyledTextField
             fullWidth
@@ -160,7 +79,6 @@ export const InputController = React.memo(({ name, label, methods, ...rest }: In
             autoComplete="off"
             className="no-spinner"
             label={label}
-            // value={inputType === "money" && field.value}
             value={field.value}
             onChange={async (event) => {
               if (isNumberTypeInput) {
@@ -179,7 +97,6 @@ export const InputController = React.memo(({ name, label, methods, ...rest }: In
 
               await onChange();
             }}
-            // onLoad={() => { alert("loaded"); }}
             onFocus={() => setIsOnFocus(true)}
             onBlur={(e) => { setIsOnFocus(false); field.onBlur(); }}
             inputRef={field.ref}
@@ -196,18 +113,8 @@ export const InputController = React.memo(({ name, label, methods, ...rest }: In
             }}
             {...rest}
             type={isNumberTypeInput ? "number" : inputType}
-            // error={!!methods.formState.errors[name]}
-            // helperText={<>{methods.formState.errors[name]?.message ?? ""}</>}
-            error={
-              isCustomField
-                ? !!methods.getFieldState(name).error
-                : !!methods.formState.errors[name]
-            }
-            helperText={<>{
-              isCustomField
-                ? (methods.getFieldState(name).error?.message ?? "")
-                : (methods.formState.errors[name]?.message ?? "")
-            }</>}
+            error={!!methods.formState.errors[name]}
+            helperText={<>{methods.formState.errors[name]?.message ?? ""}</>}
           />
         );
       }}
@@ -224,16 +131,9 @@ export const InputController = React.memo(({ name, label, methods, ...rest }: In
     // });
 
     return (
-      // (prevProps.methods.formState?.errors[name]?.message ?? "") === (nextProps.methods.formState?.errors[name]?.message ?? "") &&
-      (
-        prevProps.isCustomField
-          ? (prevProps.methods.getFieldState(name).error ?? "") === (nextProps.methods.getFieldState(name).error ?? "")
-          : (prevProps.methods.formState?.errors[name]?.message ?? "") === (nextProps.methods.formState?.errors[name]?.message ?? "")
-      ) &&
-      (prevProps?.isCustomField ?? false) === (nextProps?.isCustomField ?? false) &&
+      (prevProps.methods.formState?.errors[name]?.message ?? "") === (nextProps.methods.formState?.errors[name]?.message ?? "") &&
       (prevProps?.required ?? false) === (nextProps?.required ?? false) &&
       (prevProps?.disabled ?? false) === (nextProps?.disabled ?? false) &&
-      // (prevProps?.inputProps) === (nextProps?.inputProps) &&
       checkAreEqual(prevProps?.inputProps, nextProps?.inputProps) &&
       (prevProps?.type ?? "text") === (nextProps?.type ?? "text")
     );

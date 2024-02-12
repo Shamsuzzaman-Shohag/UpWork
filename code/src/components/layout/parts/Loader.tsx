@@ -1,7 +1,11 @@
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 
-const Loader = ({ isLoading }) => {
+type LoaderProps = {
+  isLoading: boolean;
+}
+
+const Loader = ({ isLoading }: LoaderProps) => {
 
   return (
     <div>

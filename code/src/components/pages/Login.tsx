@@ -2,8 +2,8 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useAppForm } from "libs/Hooks";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Form, Input, InputWithIcon, joi } from "components/shared/form/Form";
-import SubmitButton from "components/shared/form/SubmitButton";
+import { Form, Input, InputWithIcon, joi } from "components/form-elements/Form";
+import SubmitButton from "components/form-elements/SubmitButton";
 import { setUserSession } from "libs/Helpers";
 
 
@@ -46,9 +46,9 @@ const Login = () => {
     try {
       console.log("onSubmit", methods.getValues());
 
-      setUserSession("token", methods.getValues().userName);
+      setUserSession("authToken");
 
-      navigate("/create-domain");
+      navigate("/");
     } catch (error: any) {
       console.log("exception", error);
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Joi, { AnySchema, DateSchema } from 'joi';
+import Joi, { DateSchema } from 'joi';
 import { JoiPasswordExtend, joiPasswordExtendCore } from 'joi-password';
 import { FormProvider as HookFormProvider } from 'react-hook-form';
 import { Input as FormInput } from './Input';
