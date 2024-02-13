@@ -101,7 +101,7 @@ export const StandAloneSelect = React.memo(<T extends { value: any; text: string
 
 export const StandAloneCheckBox = React.memo(({ className, label, labelPlacement = "end", value, disabled, onChange }: StandAloneCheckBoxProps) => {
   const [localValue, setLocalValue] = useState(false);
-  const icon = <CheckBoxOutlineBlankOutlined fontSize='large' style={{ color: "var(--agency-theme-color-secondary)" }} />;
+  const icon = <CheckBoxOutlineBlankOutlined fontSize='large' style={{ color: "var(--color-secondary)" }} />;
   const checkedIcon = <CheckBoxIcon fontSize='large' style={{ color: disabled ? grey[500] : green[500] }} />;
 
   // console.log({ value });

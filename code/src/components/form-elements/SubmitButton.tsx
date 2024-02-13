@@ -3,6 +3,7 @@ import {
   useFormContext,
   UseFormReturn
 } from 'react-hook-form';
+import imgProcessing from 'assets/processing.svg';
 
 type SubmitButtonProps = {
   label: string;
@@ -26,7 +27,7 @@ export const SubmitButtonController = React.memo(({
 
   const disabled = rest?.disabled ?? false;
   const innerRef = rest?.innerRef;
-  const successClassName = rest?.successClassName ?? "btn btn-success solid";
+  const successClassName = rest?.successClassName ?? "btn btn-info solid";
 
   delete rest?.disabled;
   delete rest?.ref;
@@ -36,11 +37,16 @@ export const SubmitButtonController = React.memo(({
   return (
     <button
       type="submit"
-      className={`${isUseLoading ? "btn btn-success loader-button" : successClassName} ${rest?.className ?? ""}`}
+      className={`${isUseLoading ? "btn btn-info loader-button" : successClassName} ${rest?.className ?? ""}`}
       disabled={disabled || (isUseLoading && methods.formState.isSubmitting)}
       onClick={() => { console.log({ methods, values: methods.getValues(), errors: methods.formState.errors }); }}
       ref={innerRef}
     >
+      {
+        isUseLoading &&
+        methods.formState.isSubmitting
+        && <img src={imgProcessing} alt="" />
+      }
       {
         !isUseLoading
           ? label

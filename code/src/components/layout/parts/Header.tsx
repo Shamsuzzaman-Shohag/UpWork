@@ -36,13 +36,13 @@ const Header = () => {
   return (
     <Box display="flex" justifyContent="end" p={2} borderBottom="1px solid grey">
       <Box display="flex">
-        <IconButton onClick={colorMode.toggleColorMode} size="large">
+        {/* <IconButton onClick={colorMode.toggleColorMode} size="large">
           {theme.palette.mode === "dark" ? (
             <DarkModeOutlined fontSize="large" />
           ) : (
             <LightModeOutlined fontSize="large" />
           )}
-        </IconButton>
+        </IconButton> */}
         <IconButton size="large" onClick={handleLogout}>
           <Logout fontSize="large" />
         </IconButton>

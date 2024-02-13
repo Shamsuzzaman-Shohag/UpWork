@@ -12,7 +12,7 @@ const Heading = ({ title }: HeadingProps) => {
     <Box mb="20px">
       <Typography
         variant="h3"
-        color={colors.grey[100]}
+        color={'#555555'}
         fontWeight="bold"
         sx={{ m: "0 0 5px 0" }}
       >

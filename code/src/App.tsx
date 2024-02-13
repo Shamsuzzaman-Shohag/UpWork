@@ -16,6 +16,7 @@ import PublicRoute from 'components/layout/PublicRoute'
 import Landing from "components/pages/Landing";
 import Login from "./components/pages/Login";
 import Logout from "./components/pages/Logout";
+import SignUp from "./components/pages/SignUp";
 import ListService from "./components/pages/ListService";
 import ListDomain from "./components/pages/ListDomain";
 import CreateDomain from "./components/pages/CreateDomain";
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/" index={true} element={<Landing />} />
           <Route index={true} path="/sign-in" element={<PublicRoute component={Login} />} />
           <Route index={true} path="/sign-out" element={<PublicRoute component={Logout} />} />
+          <Route index={true} path="/sign-up" element={<PublicRoute component={SignUp} />} />
           <Route index={true} path="/service/list" element={<PrivateRoute component={ListService} />} />
           <Route index={true} path="/domain/list" element={<PrivateRoute component={ListDomain} />} />
           <Route index={true} path="/domain/create" element={<PrivateRoute component={CreateDomain} />} />

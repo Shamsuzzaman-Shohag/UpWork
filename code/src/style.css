@@ -7,17 +7,15 @@ body,
 .content {
   height: 100%;
   width: 100%;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Montserrat", sans-serif;
 } */
 
 :root {
   --color-green: #5fbb47;
-  --color-blue: #1a758f;
-  --agency-theme-color-primary: var(--color-green);
-  --agency-theme-color-secondary: var(--color-blue);
-  --agency-theme-color-secondary-alt: #5a9eb1;
-  --agency-theme-color-secondary-light: #e7f1f4;
-  --agency-theme-color-link: var(--agency-theme-color-primary);
+  --color-blue: #233044;
+  --color-primary: var(--color-green);
+  --color-secondary: var(--color-blue);
+  --color-link: var(--color-primary);
   --color-progress-bar-background: var(--color-green);
   --color-progress-bar-progress: var(--color-blue);
   --color-warning: #ff9700;
@@ -35,7 +33,7 @@ body,
   --window-height: 100px;
 }
 
-html,
+/* html,
 body,
 #root,
 .app,
@@ -44,16 +42,71 @@ body,
   width: 100%;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
+  background-color: #f2f0f0;
   color: #fff;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  position: relative;
+} */
+
+html,
+body,
+#root,
+.app,
+.content {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background-color: #f2f0f0;
+  height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
   position: relative;
 }
 
+.content .public {
+  background-color: #233044;
+}
+
 .app {
   display: flex;
   position: relative;
+}
+
+a,
+a:focus,
+a:hover {
+  color: var(--color-green);
+  text-decoration: none;
+}
+
+.account-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 30px 20px;
+}
+
+.account-header {
+  text-align: center;
+  padding: 10px 15px 25px 15px;
+}
+
+.account-header .title {
+  color: #555555;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 ::-webkit-scrollbar {
@@ -192,11 +245,11 @@ h6 {
 }
 
 .login-input-label.MuiFormLabel-root:not(.Mui-error) {
-  color: var(--agency-theme-color-secondary);
+  color: var(--color-secondary);
 }
 
 .login-input-label.MuiFormLabel-root.Mui-focused {
-  color: var(--agency-theme-color-primary);
+  color: var(--color-primary);
 
 }
 
@@ -270,7 +323,7 @@ button[class*="MUIDataTableFilter-resetLink"] {
 } */
 .MuiTableHead-root th {
   /* background: var(--color-light-grey); */
-  background: var(--agency-theme-color-secondary);
+  background: var(--color-secondary);
   color: #fff;
 }
 
@@ -280,6 +333,7 @@ button[class*="MUIDataTableFilter-resetLink"] {
   color: #fff;
   text-align: left;
   line-height: 22px;
+  text-transform: none;
 }
 
 .MuiTableHead-root th.MuiTableCell-root.text-right div,
@@ -448,7 +502,7 @@ button[class*="MUIDataTableHeadCell-toolButton"] {
   color: rgb(158, 158, 158);
 }
 td.MuiTableCell-root .MuiButtonBase-root.MuiCheckbox-root.Mui-checked .MuiSvgIcon-root {
-  color: var(--agency-theme-color-primary);
+  color: var(--color-primary);
 }
 th.MuiTableCell-root .MuiButtonBase-root.MuiCheckbox-root .MuiSvgIcon-root {
   color: #fff;
@@ -478,7 +532,7 @@ div[class*="MUIDataTableSearch-searchText"] {
 }
 
 .MuiTableCell-root {
-  padding: 11px 10px;
+  padding: 11px 10px !important;
   /* vertical-align: top; */
   vertical-align: middle;
   border-bottom: 1px solid #e6e6e6;
@@ -539,7 +593,7 @@ th.MuiTableCell-root {
 }
 
 .MuiTableRow-root .MuiTableCell-root .Mui-checked {
-  color: var(--agency-theme-color-primary);
+  color: var(--color-primary);
 }
 
 .MuiTableRow-root .MuiTableCell-root .Mui-checked.Mui-disabled {
@@ -590,7 +644,7 @@ th.MuiTableCell-root {
 
 .MuiList-root>.MuiMenuItem-root.MuiMenuItem-gutters {
   /* display: block; */
-  color: var(--agency-theme-color-secondary);
+  color: var(--color-secondary);
   white-space: normal;
 }
 
@@ -600,7 +654,7 @@ th.MuiTableCell-root {
 
 .MuiList-root>.MuiMenuItem-root.Mui-selected.MuiMenuItem-gutters {
   color: #fff;
-  background-color: var(--agency-theme-color-primary);
+  background-color: var(--color-primary);
 }
 
 .select-opt-group {
@@ -649,4 +703,12 @@ th.MuiTableCell-root {
   font-size: 85%;
   margin: 0px;
   min-height: 0px;
+}
+
+.MuiTableCell-head .MuiButtonBase-root.MuiButton-root {
+  min-width: 0;
+}
+
+.Mui-active .MuiSvgIcon-root.MuiTableSortLabel-icon {
+  color: #fff !important;
 }

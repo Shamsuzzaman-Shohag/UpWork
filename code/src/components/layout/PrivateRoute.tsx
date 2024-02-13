@@ -21,8 +21,12 @@ const PrivateRoute = ({ component: Component, ...rest }: PrivateRouteProps) => {
       ? <div className="app">
         <Sidebar />
         <main className="content">
-          <Header />
-          <Component />
+          <div className='header'>
+            <Header />
+          </div>
+          <div className='main'>
+            <Component />
+          </div>
         </main>
       </div>
       : <Navigate to={{ pathname: '/' }} />

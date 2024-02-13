@@ -53,7 +53,7 @@ export const RadioController = React.memo(({ name, label, labelPlacement, group,
                   }}
                   {...rest}
                   sx={{
-                    color: "var(--agency-theme-color-secondary)",
+                    color: "var(--color-secondary)",
                     '&.Mui-checked': {
                       color: green[600]
                     }

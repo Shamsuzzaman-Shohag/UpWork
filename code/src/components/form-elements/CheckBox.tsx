@@ -82,7 +82,7 @@ export const CheckBoxController = React.memo(({ name, label, labelPlacement, met
 );
 
 const CustomCheckBox = (props: DefaultCheckBoxProps) => {
-  const icon = <CheckBoxOutlineBlankOutlined fontSize='large' style={{ color: props.disabled ? grey[500] : "var(--agency-theme-color-secondary)" }} />;
+  const icon = <CheckBoxOutlineBlankOutlined fontSize='large' style={{ color: props.disabled ? grey[500] : "var(--color-secondary)" }} />;
   const checkedIcon = <CheckBoxIcon fontSize='large' style={{ color: props.disabled ? grey[500] : green[500] }} />;
   return (
     <DefaultCheckBox

@@ -14,7 +14,9 @@ const PublicRoute = ({ component: Component, ...rest }: PublicRouteProps) => {
   return (
     <div className="app">
       <main className="content">
-        <Component />
+        <div className='public'>
+          <Component />
+        </div>
       </main>
     </div>
   )

@@ -141,12 +141,15 @@ export const InputController = React.memo(({ name, label, methods, ...rest }: In
 );
 
 export const StyledTextField = styled(TextField)({
+  "& label": {
+    fontSize: "14px"
+  },
   // root: {
   '& label:not(.MuiInputLabel-shrink)': {
     lineHeight: 1.2
   },
   '& label.Mui-focused': {
-    color: 'var(--agency-theme-color-primary)'
+    color: 'var(--color-primary)'
   },
   '& label.Mui-focused.Mui-error': {
     color: 'var(--color-danger)'
@@ -155,7 +158,7 @@ export const StyledTextField = styled(TextField)({
     color: 'var(--color-danger)'
   },
   '& label.MuiFormLabel-filled.Mui-disabled': {
-    color: 'var(--agency-theme-color-secondary)'
+    color: 'var(--color-secondary)'
   },
   '& label.MuiFormLabel-filled.Mui-disabled.Mui-error': {
     color: 'var(--color-danger)'
@@ -164,35 +167,35 @@ export const StyledTextField = styled(TextField)({
     color: 'var(--color-danger)'
   },
   '& label.MuiFormLabel-filled': {
-    color: 'var(--agency-theme-color-secondary)',
+    color: 'var(--color-secondary)',
     lineHeight: "15px",
     marginTop: "1px"
   },
   '& label.Mui-focused.MuiFormLabel-filled': {
-    color: 'var(--agency-theme-color-primary)'
+    color: 'var(--color-primary)'
   },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
       border: '2px solid',
-      borderColor: 'var(--agency-theme-color-secondary)',
+      borderColor: 'var(--color-secondary)',
       '& legend': {
         width: 'auto'
       }
     },
     '&.Mui-disabled': {
-      backgroundColor: "var(--agency-theme-color-secondary-light)",
+      backgroundColor: "var(--color-secondary-light)",
       color: '#000',
-      borderColor: 'var(--agency-theme-color-secondary)'
+      borderColor: 'var(--color-secondary)'
     },
     '&.Mui-disabled fieldset.MuiOutlinedInput-notchedOutline': {
-      borderColor: 'var(--agency-theme-color-secondary)',
+      borderColor: 'var(--color-secondary)',
       color: '#000'
     },
     '&:hover fieldset': {
-      borderColor: 'var(--agency-theme-color-secondary)'
+      borderColor: 'var(--color-secondary)'
     },
     '&.Mui-focused fieldset': {
-      borderColor: 'var(--agency-theme-color-primary)'
+      borderColor: 'var(--color-primary)'
     },
     '&.Mui-focused.Mui-error fieldset': {
       borderColor: "var(--color-danger)"
@@ -204,7 +207,7 @@ export const StyledTextField = styled(TextField)({
       borderColor: 'var(--color-danger)'
     },
     '&.Mui-disabled:hover fieldset': {
-      borderColor: 'var(--agency-theme-color-secondary)'
+      borderColor: 'var(--color-secondary)'
     },
     '&.Mui-disabled.Mui-error:hover fieldset': {
       borderColor: 'var(--color-danger)'
@@ -216,7 +219,8 @@ export const StyledTextField = styled(TextField)({
   },
   '& input': {
     paddingTop: '14px',
-    paddingBottom: '14px'
+    paddingBottom: '14px',
+    fontSize: "14px"
   },
   '& input.Mui-disabled': {
     "WebkitTextFillColor": "#000"

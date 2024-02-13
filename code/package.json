@@ -1,7 +1,32 @@
 {
-  "name": "react-admin",
-  "version": "0.1.0",
+  "name": "app",
   "private": true,
+  "config": {
+    "cmd": {
+      "startDev": "env-cmd -f ./src/envs/dev.env npm run start:5000",
+      "startProd": "env-cmd -f ./src/envs/prod.env npm run start:6000",
+      "buildDev": "env-cmd -f ./src/envs/dev.env npm run build",
+      "buildProd": "env-cmd -f ./src/envs/prod.env npm run build",
+      "stop": "for /f \"tokens=3 delims=LISTENING\" %i in ('netstat -ano ^| findStr \"4002\" ^| findStr \"LISTENING\"') do @Taskkill /F /IM %i",
+      "analyze": "source-map-explorer build/static/js/main.*"
+    }
+  },
+  "scripts": {
+    "start:dev": "%npm_package_config_cmd_startDev%",
+    "start:prod": "%npm_package_config_cmd_startProd%",
+    "build:dev": "%npm_package_config_cmd_buildDev%",
+    "build:prod": "%npm_package_config_cmd_buildProd%",
+    "start:5000": "set PORT=5000 && react-scripts start",
+    "start:6000": "set PORT=6000 && react-scripts start",
+    "build": "react-scripts build",
+    "install-deps": "npm i --legacy-peer-deps",
+    "serve-build": "serve -s ./build/dev -p 5009",
+    "serve-build:prod": "serve -s ./build/prod -p 6009",
+    "stop": "%npm_package_config_cmd_stop%",
+    "analyze": "%npm_package_config_cmd_analyze%",
+    "stop-all": "taskkill -F -IM node.exe",
+    "release-all": "net stop winnat"
+  },
   "dependencies": {
     "@date-io/date-fns": "^2.17.0",
     "@emotion/react": "^11.11.1",
@@ -52,13 +77,6 @@
     "source-map-explorer": "^2.5.3",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
-  },
-  "scripts": {
-    "start": "set PORT=5000 && react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "install-deps": "npm i --legacy-peer-deps"
   },
   "eslintConfig": {
     "extends": [

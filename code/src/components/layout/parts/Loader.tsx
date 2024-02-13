@@ -10,7 +10,7 @@ const Loader = ({ isLoading }: LoaderProps) => {
   return (
     <div>
       <Backdrop
-        sx={{ color: 'green', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        sx={{ color: '#233044', zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={isLoading}
       >
         <CircularProgress color="inherit" />

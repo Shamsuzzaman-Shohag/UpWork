@@ -153,7 +153,7 @@ export const StyledInputLabel = styled(InputLabel)(() => ({
     lineHeight: 1.2
   },
   '&.Mui-focused': {
-    color: 'var(--agency-theme-color-primary)'
+    color: 'var(--color-primary)'
   },
   '&.Mui-focused.Mui-error': {
     color: 'var(--color-danger)'
@@ -162,7 +162,7 @@ export const StyledInputLabel = styled(InputLabel)(() => ({
     color: 'var(--color-danger)'
   },
   '&.MuiFormLabel-filled.Mui-disabled': {
-    color: 'var(--agency-theme-color-secondary)'
+    color: 'var(--color-secondary)'
   },
   '&.MuiFormLabel-filled.Mui-disabled.Mui-error': {
     color: 'var(--color-danger)'
@@ -171,26 +171,26 @@ export const StyledInputLabel = styled(InputLabel)(() => ({
     color: 'var(--color-danger)'
   },
   '&.MuiFormLabel-filled': {
-    color: 'var(--agency-theme-color-secondary)'
+    color: 'var(--color-secondary)'
   },
   '&.Mui-focused.MuiFormLabel-filled': {
-    color: 'var(--agency-theme-color-primary)'
+    color: 'var(--color-primary)'
   }
 }));
 
 export const StyledSelect = styled(DefaultSelect)(() => ({
   '& fieldset': {
     border: '2px solid',
-    borderColor: 'var(--agency-theme-color-secondary)',
+    borderColor: 'var(--color-secondary)',
     '& legend': {
       width: 'auto'
     }
   },
   '&:hover fieldset.MuiOutlinedInput-notchedOutline': {
-    borderColor: 'var(--agency-theme-color-secondary)'
+    borderColor: 'var(--color-secondary)'
   },
   '&.Mui-focused fieldset.MuiOutlinedInput-notchedOutline': {
-    borderColor: 'var(--agency-theme-color-primary)'
+    borderColor: 'var(--color-primary)'
   },
   '&.Mui-focused.Mui-error fieldset.MuiOutlinedInput-notchedOutline': {
     borderColor: "var(--color-danger)"
@@ -201,14 +201,14 @@ export const StyledSelect = styled(DefaultSelect)(() => ({
     zIndex: "1"
   },
   '&.Mui-disabled fieldset.MuiOutlinedInput-notchedOutline': {
-    backgroundColor: "var(--agency-theme-color-secondary-light)",
+    backgroundColor: "var(--color-secondary-light)",
     color: '#000',
-    borderColor: 'var(--agency-theme-color-secondary)'
+    borderColor: 'var(--color-secondary)'
   },
   '&.Mui-disabled:hover fieldset.MuiOutlinedInput-notchedOutline': {
-    backgroundColor: "var(--agency-theme-color-secondary-light)",
+    backgroundColor: "var(--color-secondary-light)",
     color: '#000',
-    borderColor: 'var(--agency-theme-color-secondary)'
+    borderColor: 'var(--color-secondary)'
   },
   '&.Mui-disabled.Mui-error fieldset.MuiOutlinedInput-notchedOutline': {
     borderColor: "var(--color-danger)"

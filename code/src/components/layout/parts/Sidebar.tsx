@@ -24,7 +24,7 @@ const Item = ({ title, to, icon, selected, setSelected }: ItemProps) => {
     <MenuItem
       active={selected === to}
       style={{
-        color: colors.grey[100],
+        // color: colors.grey[100],
       }}
       onClick={() => setSelected(to)}
       icon={icon}
@@ -45,7 +45,8 @@ const Sidebar = () => {
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
+          background: `#233044 !important`,
+          color: "#f2f0f0"
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -54,7 +55,7 @@ const Sidebar = () => {
           padding: "5px 35px 5px 20px !important",
         },
         "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
+          color: "var(--color-green) !important",
         },
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
@@ -69,7 +70,7 @@ const Sidebar = () => {
             // icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
-              color: colors.grey[100],
+              // color: colors.grey[100],
             }}
           >
             {
